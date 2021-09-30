@@ -1,0 +1,30 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "dlv",
+            "type": "go",
+            "request": "launch",
+            // "stopOnEntry": true,
+            "mode": "auto",
+            "program": "${fileDirname}"
+        },
+        {
+            "name": "lldb",
+            "type": "lldb",
+            "request": "launch",
+            "initCommands": ["settings set target.x86-disassembly-flavor intel"],
+            "program": "${workspaceFolder}/build/${fileBasenameNoExtension}",
+            "preRunCommands": ["breakpoint set -n main.main", "breakpoint list"],
+            "stopOnEntry": true,
+            "args": [],
+            "cwd": "${workspaceFolder}",
+            "postRunCommands": [],
+            "exitCommands": [],
+            "preLaunchTask": "Build Go"
+        }
+    ]
+}
