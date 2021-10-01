@@ -18,7 +18,11 @@
             "request": "launch",
             "initCommands": ["settings set target.x86-disassembly-flavor intel"],
             "program": "${workspaceFolder}/build/${fileBasenameNoExtension}",
-            "preRunCommands": ["breakpoint set -n main.main", "breakpoint list"],
+            "preRunCommands": [
+                "breakpoint set -n runtime.main",
+                "breakpoint set -n main.main",
+                "breakpoint list"
+            ],
             "stopOnEntry": true,
             "args": [],
             "cwd": "${workspaceFolder}",
