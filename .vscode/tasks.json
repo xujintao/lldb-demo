@@ -9,7 +9,8 @@
             "command": "go",
             "args": [
                 "build",
-                "-gcflags='-l -N'",
+                "-gcflags='all=-l -N'",
+                // "-gcflags='-m'",
                 // "-ldflags='-s -w'",
                 "-ldflags='-w'",
                 "-o",
