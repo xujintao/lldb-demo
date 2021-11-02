@@ -4,6 +4,21 @@
     "version": "2.0.0",
     "tasks": [
         {
+            "label": "Build Go with debug info",
+            "type": "shell",
+            "command": "go",
+            "args": [
+                "build",
+                "-gcflags='all=-l -N'",
+                // "-gcflags='-m'",
+                // "-ldflags='-s -w'",
+                // "-ldflags='-w'",
+                "-o",
+                "${workspaceFolder}/build/${fileBasenameNoExtension}",
+                "${file}"
+            ]
+        },
+        {
             "label": "Build Go",
             "type": "shell",
             "command": "go",

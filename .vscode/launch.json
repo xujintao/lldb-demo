@@ -9,8 +9,11 @@
             "type": "go",
             "request": "launch",
             // "stopOnEntry": true,
-            "mode": "auto",
-            "program": "${fileDirname}"
+            // "mode": "auto",
+            // "program": "${fileDirname}"
+            "mode": "exec",
+            "program": "${workspaceFolder}/build/${fileBasenameNoExtension}",
+            "preLaunchTask": "Build Go with debug info"
         },
         {
             "name": "lldb",
